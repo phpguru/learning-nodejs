@@ -4,7 +4,7 @@ var util = require('util');
 var fs = require('fs');
 
 var readme = fs.readFileSync('sample.txt', 'utf8');
-console.log(readme);
+fs.writeFileSync('writeme.txt', readme);
 
 var readmemd = fs.readFileSync('README.md', 'utf8');
 console.log(readmemd);
