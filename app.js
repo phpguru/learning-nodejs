@@ -1,18 +1,11 @@
 var stuff = require('./stuff');
 var events = require('events');
-<<<<<<< HEAD
-=======
 var util = require('util');
 var fs = require('fs');
 
-var readme = fs.readFileSync('sample.txt', 'utf8');
-console.log(readme);
-
-var readmemd = fs.readFileSync('README.md', 'utf8');
-console.log(readmemd);
 
 
->>>>>>> c05b6bb... Updated README
+
 var time = 0;
 var name1 = "Geoff";
 var name2 = "Brandon";
@@ -107,8 +100,9 @@ mary.emit('speak', 'fuck off james');
 var fs = require('fs');
 
 var readMe = fs.readFileSync('dude', 'utf8');
-console.log(readMe);
-var readmemd = fs.readFileSync('README.md', 'utf8');
-console.log(readmemd); 
+fs.writeFileSync('writeMe.txt', readMe);
+
+
 
 //code
+
