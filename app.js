@@ -9,7 +9,7 @@ var petname;
 var randomNumber;
 var fs = require(`fs`);
 var readMe = fs.readFileSync('README.md', 'utf8');
-console.log(readMe);
+fs.writeFileSync('writeMe.txt', readMe);
 var Person = function(name){
 	this.name = name;
 };
