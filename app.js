@@ -1,6 +1,14 @@
 var stuff = require('./stuff');
 var events = require('events');
 var util = require('util');
+var fs = require('fs');
+
+var readme = fs.readFileSync('sample.txt', 'utf8');
+console.log(readme);
+
+var readmemd = fs.readFileSync('README.md', 'utf8');
+console.log(readmemd);
+
 
 var time = 0;
 var name1 = "Geoff";
