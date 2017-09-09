@@ -1,4 +1,4 @@
-var randomizer = require('./randomizer');
+var stuff = require('./stuff');
 
 var time = 0;
 var name1 = "Geoff";
@@ -19,17 +19,22 @@ console.log('Starting program...');
 
 var timer = setInterval(function(){
 
-	randomNumber = randomizer(100);
+	randomNumber = stuff.randomizer(100);
 	console.log('Random Value is ' + randomNumber);
 	if (randomNumber > 5 && randomNumber <= 10) {
 		list1.push('Hummer');
 	}
+
+	console.log(stuff.adder(5,6));
+	
+	console.log(stuff.adder(stuff.pi,12));
 
 	// Call dynamic function
 	if (time === 3) {
 		dynFnCaller(myFunc);
 	}
 
+	// More code comment
 	petname = list1[time];
 	if (typeof petname !== 'undefined') {
 		console.log('I have a pet named '+ list1[time]);
