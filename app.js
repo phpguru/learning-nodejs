@@ -1,5 +1,5 @@
 var stuff = require('./stuff');
-
+var events = require('events');
 var time = 0;
 var name1 = "Geoff";
 var name2 = "Brandon";
@@ -57,3 +57,12 @@ var timer = setInterval(function(){
 
 console.log(__dirname);
 console.log(__filename);
+
+
+var myEmitter = new events.EventEmitter();
+
+myEmitter.on('someEvent', function(mssg){
+	console.log(mssg);
+	});
+
+myEmitter.emit('someEvent', 'the event was emitted');
