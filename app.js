@@ -7,6 +7,9 @@ var name2 = "Brandon";
 var list1 = ['Avu', 'Duke', 'Daisy'];
 var petname;
 var randomNumber;
+var fs = require(`fs`);
+var readMe = fs.readFileSync('README.md', 'utf8');
+console.log(readMe);
 var Person = function(name){
 	this.name = name;
 };
