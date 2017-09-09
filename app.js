@@ -25,10 +25,10 @@ var timer = setInterval(function(){
 		list1.push('Hummer');
 	}
 
+	// Call dynamic function
 	if (time === 3) {
 		dynFnCaller(myFunc);
 	}
-
 
 	petname = list1[time];
 	if (typeof petname !== 'undefined') {
