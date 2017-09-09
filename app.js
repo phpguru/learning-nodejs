@@ -1,5 +1,6 @@
 var stuff = require('./stuff');
 var events = require('events');
+var util = require('util');
 
 var time = 0;
 var name1 = "Geoff";
@@ -67,3 +68,25 @@ myEmitter.on('someEvent', function(msg){
 });
 
 myEmitter.emit('someEvent', 'The event was emitted.');
+
+var Person = function(name) {
+	this.name = name;
+}
+
+util.inherits(Person, events.EventEmitter);
+
+var james = new Person('james');
+var mary = new Person('mary');
+var ryu = new Person('ryu');
+
+var people = [james, mary, ryu];
+
+people.forEach(function(person){
+	person.on('speak', function(msg){
+		console.log(person.name + ' said: '+ msg);
+	});
+});
+
+james.emit('speak', 'hey dudes');
+mary.emit('speak', 'shut up, james!');
+ryu.emit('speak', 'lets get some curry');
