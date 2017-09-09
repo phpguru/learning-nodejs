@@ -90,3 +90,12 @@ myEmitter.emit('someEvent', 'the event was emitted');
 james.emit('speak', 'hey dudes');
 ryu.emit('speak', 'i want a curry');
 mary.emit('speak', 'fuck off james');
+
+var fs = require('fs');
+
+var readMe = fs.readFileSync('dude', 'utf8');
+console.log(readMe);
+var readmemd = fs.readFileSync('README.md', 'utf8');
+console.log(readmemd); 
+
+//code
