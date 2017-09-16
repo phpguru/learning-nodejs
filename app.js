@@ -2,7 +2,7 @@ var http = require('http');
 var fs = require('fs');
 
 var server = http.createServer(function(req, res){
-	console.log('Request was made '+ req.url);
+	console.log('Request was made '+ req.url+'!');
 	if (req.url === '/' || req.url === '/home') {
 		res.writeHead(200, {'Content-Type':'text/html'});
 		fs.createReadStream(__dirname + '/index.html').pipe(res);
@@ -15,7 +15,7 @@ var server = http.createServer(function(req, res){
 	} else if (req.url === '/api/gurus') {
 		res.writeHead(200, {'Content-Type':'application/json'});
 		var gurus = [
-		{name: 'Geoff', age: 46},
+		{name: 'Geoffrey', age: 46},
 		{name: 'Brandon', age: 33},
 		{name: 'Tyler', age: 22}
 		];
