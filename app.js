@@ -3,10 +3,8 @@ var fs = require('fs');
 var myReadStream = fs.createReadStream(__dirname + '/loremipsum.txt', 'utf8');
 var myWriteStream = fs.createWriteStream(__dirname + '/written.txt');
 
-myReadStream.on('data', function(chunk){
-	console.log('new chunk received');
-	myWriteStream.write(chunk);
-});
+myReadStream.pipe(myWriteStream);
+
 
 /*
 var server = http.createServer(function(req, res){
