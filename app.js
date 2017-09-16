@@ -3,8 +3,8 @@ var fs = require('fs');
 
 var server = http.createServer(function(req, res){
 	console.log('Request was made '+ req.url);
-	res.writeHead(200, {'Content-TYpe':'text/plain'});
-	var myReadStream = fs.createReadStream(__dirname + '/loremipsum.txt', 'utf8');
+	res.writeHead(200, {'Content-TYpe':'text/html'});
+	var myReadStream = fs.createReadStream(__dirname + '/index.html', 'utf8');
 	myReadStream.pipe(res);
 });
 
