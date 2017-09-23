@@ -5,16 +5,14 @@ var app = express();
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
+app.use('/assets', express.static('assets'));
+
 app.get('/', function(req, res){
 	res.render('home');
 });
 
 app.get('/home', function(req, res){
 	res.render('home');
-});
-
-app.get('/styles.css', function(req, res){
-	res.sendFile(__dirname + '/styles.css');
 });
 
 app.get('/contact', function(req, res){
@@ -31,8 +29,10 @@ app.get('/profile/:name', function(req, res){
 	res.render('profile', {person: req.params.name, data: data});
 });
 
+/*
 app.use(function (req, res, next) {
   res.status(404).sendFile(__dirname + '/404.html');
 });
+*/
 
 app.listen(3000);
