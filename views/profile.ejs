@@ -4,13 +4,20 @@
 		<style type="text/css">
 			body {background: skyblue; font-family: verdana; color: #fff, padding: 30px;}
 			h1 {font-size: 48px; text-transform: uppercase; text-align: center;}
+      h2 {font-size: 30px; text-transform: uppercase; text-align: center;}
 			p {font-family: impact; font-size: 24px; text-align: center;}
 		</style>
 	</head>
 	<body>
-	 <h1>Welcome to the profile of <%= person %></h1>
-	 <p><strong>Age: </strong> <%= data.age %></p>
-    <p><strong>Job: </strong> <%= data.job %></p> 
 
+<% include partials/nav.ejs %>
+   <h1>Welcome to the profile of <%= person %></h1>
+	 <p><strong>Age: </strong> <%= data.age %></p>
+    <p><strong>Job: </strong> <%= data.job %></p>
+    <h2>Hobbies</h2>
+    <ul>
+      <% data.hobbies.forEach(function(item){ %>
+        <li><%= item %></li>
+<% }); %>
 	</body>
 </html>
