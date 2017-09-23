@@ -1,0 +1,11 @@
+	 <h1>Hey Node Ninjas!</h1>
+	 <p>This is the profile of {{ person }}</p>
+	 <p>Age: {{ data.age }}</p>
+	 <p>Job: {{ data.job }}</p>
+	 <p>Slogan: {{{ data.slogan }}}</p>
+	 <h2>Hobbies</h2>
+	 <ul>
+	 {{#each data.hobbies }}
+	 	<li> {{ hobby }} </li>
+	 {{/each}}
+	</ul>
