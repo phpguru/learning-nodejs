@@ -5,6 +5,9 @@ var app = express();
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
+var bodyParser = require('body-parser');
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
+
 app.use('/assets', express.static('assets'));
 
 app.get('/', function(req, res){
@@ -16,7 +19,11 @@ app.get('/home', function(req, res){
 });
 
 app.get('/contact', function(req, res){
-	console.log(req.query);
+	res.render('contact', {qs: req.query});
+});
+
+app.post('/contact', urlencodedParser, function(req, res){
+	console.log(req.body);
 	res.render('contact', {qs: req.query});
 });
 

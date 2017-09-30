@@ -1,14 +1,14 @@
 	 <h1>Contact</h1>
 	 <p>Follow @djsoulfeggio on Twitter and Instagram</p>
 
-	 <form id="contact-form">
+	 <form id="contact-form" method="post" action="/contact">
 	 	<div class="form-group">
 		 	<label for="who">Who do you want to contact?</label>
-		 	<input class="form-control" type="text" name="who" value="{{qs.person}}"/>
+		 	<input class="form-control" type="text" name="who" value="{{qs.who}}"/>
 		 </div>
 		 <div class="form-group">
 		 	<label for="department">Which department?</label>
-		 	<input class="form-control" type="text" name="department" value="{{qs.dept}}"/>
+		 	<input class="form-control" type="text" name="department" value="{{qs.department}}"/>
 		 </div>
 		 <div class="form-group">
 		 	<label for="email">Your email</label>
